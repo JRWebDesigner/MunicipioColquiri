@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Presentacion from '../components/Presentacion.astro';
+---
+
+<Layout title="Municipio de Colquiri">
+	<Presentacion />
+
+	<div class="flex md:flex-row flex-col justify-around items-center p-10 md:p-16 my-28 gap-10 bg-gray-50 shadow-sm">
+		<div class="flex flex-col justify-center items-center gap-5">
+			<h2 class="border-b-4 border-[10%] border-red-500">Municipio de Colquiri</h2>
+			<p>
+				El municipio de Colquiri fue creado el 3 de noviembre de 1945. Tiene una extensión de 987,93 km2. y su topografía está compuesta por una zona accidentada, con presencia de serranías y quebradas. También de áreas altiplánicas y de cordillera o montaña.
+			</p>
+			<p>
+				Limita al norte con los Municipios de Ichoca e Inquisivi, al sur con el Departamento de Oruro. La temperatura es de ...
+			</p>
+			<button class="mx-auto w-[70%] md:w-[40%] bg-gradient-to-r to-red-600 from-red-500 text-center font-semibold rounded-lg text-white text-2xl hover:bg-red-600 transition-all">
+				<a href="/Municipio">Leer más</a>
+			</button>
+		</div>
+		<img class="hidden md:block w-[50%]" src="/FotosGamp/Colquiri.jpg" alt="">
+	</div>
+	<div class="w-full bg-white p-5 flex justify-center items-center flex-col">
+		<h2 class="border-b-4 border-[10%] border-red-500">Algunos atractivos Turisticos</h2>
+		<div class="flex gap-7 flex-col justify-center items-center mt-10">
+			<span class="text-xl text-center flex items-center gap-3 font-semibold">Las Aguas Termales de Ajamarca</span>
+			<span class="text-xl text-center flex items-center gap-3 font-semibold">El Campamento Minero de Colquiri</span>
+			<span class="text-xl text-center flex items-center gap-3 font-semibold">Aventura (trekking)</span>
+			<span class="text-xl text-center flex items-center gap-3 font-semibold">El turismo cultura</span>
+		</div>
+	</div>
+</Layout>
+<style>
+	h2{
+		font-size: 2rem;
+
+	}
+	@media (min-width: 768px) {
+    	h2{
+		font-size: 3vw;
+		font-weight: 600;
+	}
+	p{
+		font-size: 1.4vw;
+	}
+	}
+</style>

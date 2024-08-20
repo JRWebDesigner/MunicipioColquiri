@@ -1,0 +1,25 @@
+---
+import Logo from "./Logo.astro"
+---
+<header class="sticky top-0 md:min-h-20 bg-white flex justify-around items-center shadow-lg">
+    <div class="w-[20%] md:w-[7%] z-50 py-2 ">
+        <Logo />
+    </div>
+    <nav class="hidden md:block">
+        <ul class="flex gap-14 font-semibold text-xl">
+            <li><a href="/">INICIO</a></li>
+            <li><a href="/Municipio">MUNICIPIO</a></li>
+            <li><a href="/GacetaMunicipal">GACETA COLQUIRI</a></li>
+            <li><a href="/Contactos">CONTACTOS</a></li>
+        </ul>
+    </nav>
+</header>
+<style>
+    li{
+        transition: .3s all;
+    }
+    li:hover{
+        color:red;
+        transform: scale(1.1)
+    }
+</style>
