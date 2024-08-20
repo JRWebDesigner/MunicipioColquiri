@@ -1,48 +1,251 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Presentacion from '../components/Presentacion.astro';
+import Layout from "../layouts/Layout.astro";
+import Presentacion from "../components/Presentacion.astro";
 ---
 
 <Layout title="Municipio de Colquiri">
 	<Presentacion />
 
-	<div class="flex md:flex-row flex-col justify-around items-center p-10 md:p-16 my-28 gap-10 bg-gray-50 shadow-sm">
+	<div
+		class="flex md:flex-row flex-col justify-around items-center p-10 lg:p-16 my-28 gap-10 shadow-sm"
+	>
 		<div class="flex flex-col justify-center items-center gap-5">
-			<h2 class="border-b-4 border-[10%] border-red-500">Municipio de Colquiri</h2>
+			<h2 class="border-b-4 border-[10%] border-red-500">
+				Municipio de Colquiri
+			</h2>
 			<p>
-				El municipio de Colquiri fue creado el 3 de noviembre de 1945. Tiene una extensión de 987,93 km2. y su topografía está compuesta por una zona accidentada, con presencia de serranías y quebradas. También de áreas altiplánicas y de cordillera o montaña.
+				El municipio de Colquiri fue creado el 3 de noviembre de 1945.
+				Tiene una extensión de 987,93 km2. y su topografía está
+				compuesta por una zona accidentada, con presencia de serranías y
+				quebradas. También de áreas altiplánicas y de cordillera o
+				montaña.
 			</p>
 			<p>
-				Limita al norte con los Municipios de Ichoca e Inquisivi, al sur con el Departamento de Oruro. La temperatura es de ...
+				Limita al norte con los Municipios de Ichoca e Inquisivi, al sur
+				con el Departamento de Oruro. La temperatura es de ...
 			</p>
-			<button class="mx-auto w-[70%] md:w-[40%] bg-gradient-to-r to-red-600 from-red-500 text-center font-semibold rounded-lg text-white text-2xl hover:bg-red-600 transition-all">
+			<button
+				class="mx-auto w-[70%] lg:w-[40%] bg-gradient-to-r to-red-600 from-red-500 text-center font-semibold rounded-lg text-white text-2xl hover:bg-red-600 transition-all"
+			>
 				<a href="/Municipio">Leer más</a>
 			</button>
 		</div>
-		<img class="hidden md:block w-[50%]" src="/FotosGamp/Colquiri.jpg" alt="">
+		<img
+			class="hidden md:block w-[50%]"
+			src="/FotosGamp/Colquiri.jpg"
+			alt=""
+		/>
 	</div>
-	<div class="w-full bg-white p-5 flex justify-center items-center flex-col">
-		<h2 class="border-b-4 border-[10%] border-red-500">Algunos atractivos Turisticos</h2>
+	<div
+		class="w-[90%] rounded-3xl mx-auto bg-white p-5 flex justify-center items-center flex-col"
+	>
+		<h2 class="border-b-4 border-[10%] border-red-500">
+			Algunos atractivos Turisticos
+		</h2>
 		<div class="flex gap-7 flex-col justify-center items-center mt-10">
-			<span class="text-xl text-center flex items-center gap-3 font-semibold">Las Aguas Termales de Ajamarca</span>
-			<span class="text-xl text-center flex items-center gap-3 font-semibold">El Campamento Minero de Colquiri</span>
-			<span class="text-xl text-center flex items-center gap-3 font-semibold">Aventura (trekking)</span>
-			<span class="text-xl text-center flex items-center gap-3 font-semibold">El turismo cultura</span>
+			<div class="flex gap-6 TurismoCards translate-y-36 opacity-85">
+				<span
+					class="text-xl text-center flex items-center gap-3 font-semibold"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="40"
+						height="40"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="#ef4444"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-ripple"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path d="M3 7c3 -2 6 -2 9 0s6 2 9 0"
+						></path><path d="M3 17c3 -2 6 -2 9 0s6 2 9 0"
+						></path><path d="M3 12c3 -2 6 -2 9 0s6 2 9 0"
+						></path></svg
+					> Las Aguas Termales de Ajamarca</span
+				>
+				<img
+					class="hidden lg:block lg:w-[500px] w-[40%] rounded-full"
+					src="/AguasTermales/AguasTermales.jpg"
+					alt="Aguas termales de Ajamarca"
+				/>
+			</div>
+			<div class="flex gap-6 TurismoCards translate-y-36 opacity-85">
+				<span
+					class="text-xl text-center flex items-center font-semibold"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="40"
+						height="40"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="#ef4444"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-shovel"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path d="M17 4l3 3"></path><path
+							d="M18.5 5.5l-8 8"></path><path
+							d="M8.276 11.284l4.44 4.44a.968 .968 0 0 1 0 1.369l-2.704 2.704a4.108 4.108 0 0 1 -5.809 -5.81l2.704 -2.703a.968 .968 0 0 1 1.37 0z"
+						></path></svg
+					> El Campamento Minero de Colquiri</span
+				>
+				<img
+					class="hidden lg:block lg:w-[500px] w-[40%] rounded-full"
+					src="/AguasTermales/CampamentoMinero.jpg"
+					alt="Campamento minero coquiri"
+				/>
+			</div>
+			<div class="flex gap-6 TurismoCards translate-y-36 opacity-85">
+				<span
+					class="text-xl text-center flex items-center gap-3 font-semibold"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="40"
+						height="40"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="#ef4444"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-trekking"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path
+							d="M12 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+						></path><path d="M7 21l2 -4"></path><path
+							d="M13 21v-4l-3 -3l1 -6l3 4l3 2"></path><path
+							d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2"
+						></path><path d="M17 12v9"></path><path d="M16 20h2"
+						></path></svg
+					> Aventura (trekking)</span
+				>
+			</div>
+			<div class="flex gap-6 TurismoCards translate-y-36 opacity-85">
+				<span
+					class="text-xl text-center flex items-center gap-3 font-semibold"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="40"
+						height="40"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="#ef4444"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-firetruck"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path
+							d="M5 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+						></path><path
+							d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+						></path><path
+							d="M7 18h8m4 0h2v-6a5 5 0 0 0 -5 -5h-1l1.5 5h4.5"
+						></path><path d="M12 18v-11h3"></path><path
+							d="M3 17l0 -5l9 0"></path><path d="M3 9l18 -6"
+						></path><path d="M6 12l0 -4"></path></svg
+					> El turismo cultural</span
+				>
+				<img
+					class="hidden lg:block lg:w-[500px] w-[40%] rounded-full"
+					src="/AguasTermales/TurismoCultural.jpg"
+					alt="Campamento minero coquiri"
+				/>
+			</div>
 		</div>
+	</div>
+
+	<div
+		class="bg-white relative py-5 my-10 flex flex-col w-full justify-center items-center"
+	>
+		<img
+			class="absolute h-[160px] right-0 lg:h-[400px] w-auto lg:left-10 bottom-0"
+			src="/AlcaldeColquiri.png"
+			alt=" Alcalde de  Colquiri 2022 - 2026"
+		/>
+		<h2 class="text-red-800 font-bold">Datos generales</h2>
+		<div class="flex lg:flex-row flex-col gap-7 lg:gap-20 flex-wrap w-full justify-center items-center">
+			<div class="flex flex-col justify-center items-center">
+				<span class="dates"> 19.620 </span>
+				<span class="text-red-700 font-semibold"> Habitantes </span>
+			</div>
+			<div class="flex flex-col justify-center items-center">
+				<span class="dates"> 988 km² </span>
+				<span class="text-red-700 font-semibold"> Superficie </span>
+			</div>
+			<div class="flex flex-col justify-center items-center">
+				<span class="dates"> 13 °C </span>
+				<span class="text-red-700 font-semibold"> Temperatura </span>
+			</div>
+		</div>
+	</div>
+
+	<div class="my-28 w-full grid place-items-center px-6">
+		<span class="frase m-auto">
+			¡Colquiri cambia contigo, el cambio lo hacemos juntos!
+		</span>
 	</div>
 </Layout>
 <style>
-	h2{
+	h2 {
 		font-size: 2rem;
-
+	}
+	span {
+		font-size: 0.8rem;
 	}
 	@media (min-width: 768px) {
-    	h2{
-		font-size: 3vw;
+		h2 {
+			font-size: 3vw;
+			font-weight: 600;
+		}
+		p {
+			font-size: 1.4vw;
+		}
+		span {
+			font-size: 2.5rem;
+		}
+		.frase {
+			font-size: 3rem !important;
+			font-weight: 600;
+			font-family: "adelia";
+		}
+		.dates {
+			font-size: 5rem !important;
+			font-weight: 900;
+		}
+	}
+	.TurismoCards {
+		transition: 0.4s all;
+	}
+	.dates {
+			font-size: 2rem !important;
+			font-weight: 900;
+	}
+	.frase {
+		font-size: 1.4rem !important;
 		font-weight: 600;
-	}
-	p{
-		font-size: 1.4vw;
-	}
+		font-family: "adelia";
 	}
 </style>
+<script>
+	const TurismoCards = document.querySelectorAll(".TurismoCards");
+	const options = {
+		root: null,
+		rootMargin: "0px",
+		threshold: 0.5,
+	};
+	function Aparecer(a, b) {
+		a.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.remove("translate-y-36");
+				entry.target.classList.remove("opacity-85");
+			}
+		});
+	}
+	let observer = new IntersectionObserver(Aparecer, options);
+	TurismoCards.forEach((turismoCard) => {
+		observer.observe(turismoCard);
+	});
+</script>
