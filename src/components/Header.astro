@@ -6,37 +6,100 @@ import Logo from "./Logo.astro"
         <Logo />
     </div>
     <nav class="hidden lg:block">
-        <ul class="flex gap-14 font-semibold text-xl">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="/Historia">HISTORIA</a></li>
-            <li><a href="/Turismo">TURISMO</a></li>
-            <li><a href="/GacetaMunicipal">GACETA COLQUIRI</a></li>
-            <li><a href="/Contactos">CONTACTOS</a></li>
+        <ul class="flex gap-10 font-semibold text-lg">
+            <li class="enlace"><a href="/">INICIO</a></li>
+            <li class="relative Acordeon">
+                MUNICIPALIDAD
+                <div class="AcordeonComponent rounded-3xl -translate-y-[20rem] bg-white p-7 absolute w-auto flex flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/Historia">HISTORIA</a>
+                    <a class="enlace" href="/Turismo">TURISMO</a>   
+                    <a class="enlace" href="/Convocatorias">CONVOCATORIAS</a>
+                </div>
+            </li>
+            <li class="relative Acordeon flex flex-col">
+                ADMINISTRACIÓN
+                <div class="AcordeonComponent2 rounded-3xl -translate-y-[30rem] bg-white p-7 absolute w-auto flex flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/Direcciones/Secretaria">SECRETARIA MUNICIPAL</a>
+                    <a class="enlace" href="/Direcciones/DesarrolloHumano">DESARROLLO HUMANO</a>   
+                    <a class="enlace" href="/Direcciones/ObrasPublicas">OBRAS PUBLICAS</a>
+                    <a class="enlace" href="/Direcciones/DesarrolloProductivo">DESARROLLO PRODUCTIVO</a>
+                </div>
+            </li>
+            <li><a class="enlace" href="/Novedades">NOVEDADES Y NOTICIAS</a></li>
+            <li class="relative Acordeon flex flex-col">
+                GACETA COLQUIRI
+                <div class="AcordeonComponent2 rounded-3xl -translate-y-[30rem] bg-white p-7 absolute w-auto flex flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/DecretiMunic">DECRETOS MUNICIPALES</a>
+                    <a class="enlace" href="/ResolucinesMunic">RESOLUCIONES MUNICIPALES</a>   
+                    <a class="enlace" href="/LeyesMunic">LEYES MUNICIPALES</a>
+                </div>
+            </li>
+            <li class="enlace"><a href="/Contactos">CONTACTOS</a></li>
         </ul>
     </nav>
     <button id="menu" class="lg:hidden absolute right-3">
         <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
     </button>
     <nav id="navMobil" class="-z-20 opacity-0 -translate-y-96 lg:hidden flex justify-center items-center p-4 absolute top-[100%] bg-[#424242] text-white w-full ">
-        <ul class="flex flex-col gap-4 justify-center font-semibold text-xl">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="/Historia">HISTORIA</a></li>
-            <li><a href="/Turismo">TURISMO</a></li>
-            <li><a href="/GacetaMunicipal">GACETA COLQUIRI</a></li>
-            <li><a href="/Contactos">CONTACTOS</a></li>
+        <ul class="flex flex-col gap-6 justify-center font-semibold text-xl">
+            <li class="enlace"><a href="/">INICIO</a></li>
+            <li class="relative Acordeon">
+                MUNICIPALIDAD
+                <div class="AcordeonComponentMobile hidden rounded-3xl bg-transparent p-7 w-auto  flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/Historia">HISTORIA</a>
+                    <a class="enlace" href="/Turismo">TURISMO</a>   
+                    <a class="enlace" href="/Convocatorias">CONVOCATORIAS</a>
+                </div>
+            </li>
+            <li class="relative Acordeon">
+                ADMINISTRACIÓN
+                <div class="AcordeonComponentMobile rounded-3xl bg-transparent p-7 w-auto flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/Direcciones/Secretaria">SECRETARIA MUNICIPAL</a>
+                    <a class="enlace" href="/irecciones/DesarrolloHumano">DESARROLLO HUMANO</a>   
+                    <a class="enlace" href="/irecciones/ObrasPublicas">OBRAS PUBLICAS</a>
+                    <a class="enlace" href="/irecciones/DesarrolloProductivo">DESARROLLO PRODUCTIVO</a>
+                </div>
+            </li>
+            <li><a class="enlace" href="/Novedades">NOVEDADES Y NOTICIAS</a></li>
+            <li class="relative Acordeon">
+                GACETA MUNICIPAL
+                <div class="AcordeonComponentMobile rounded-3xl bg-transparent p-7 w-auto flex-col justify-center items-start gap-7">
+                    <a class="enlace" href="/DecretiMunic">DECRETOS MUNICIPALES</a>
+                    <a class="enlace" href="/ResolucinesMunic">RESOLUCIONES MUNICIPALES</a>   
+                    <a class="enlace" href="/LeyesMunic">LEYES MUNICIPALES</a>
+                </div>
+            </li>
+            <li class="enlace"><a href="/Contactos">CONTACTOS</a></li>
         </ul>
     </nav>
 </header>
 <style>
-    li{
+    .enlace{
         transition: .3s all;
     }
-    li:hover{
+    .enlace:hover{
         color:red;
         transform: scale(1.1)
     }
     #navMobil{
         transition: .5s all;
+    }
+    .Acordeon{
+        cursor: pointer;
+        transition: .5s all;
+        
+    }
+    .AcordeonComponentMobile{
+        display: none;
+    }
+    .Acordeon:hover .AcordeonComponent{
+        transform: translateY(0);
+    }
+    .Acordeon:hover .AcordeonComponent2{
+        transform: translateY(1.5rem);
+    }
+    .Acordeon:hover .AcordeonComponentMobile{
+        display: flex;
     }
 </style>
 <script>

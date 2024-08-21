@@ -2,9 +2,86 @@
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 ---
+
 <Layout title="CONTACTOS | COLQUIRI">
-    <Banner
-        titulo="Contactanos"
-        imagen="/AguasTermales/imagen4.jpg"
-    />
+    <Banner titulo="Contactanos" imagen="/AguasTermales/imagen4.jpg" />
+    <div class="my-10 flex flex-col md:flex-row justify-around items-center">
+        <div>
+            <div class="flex gap-7 justify-center items-center text-2xl md:text-3xl">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f61313"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-map-2"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"></path><path
+                    d="M9 4v13"></path><path d="M15 7v5.5"></path><path
+                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"
+                ></path><path d="M19 18v.01"></path></svg
+                >
+            <span class="font-bold">Nuestra Ubicación: </span>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <span class="px-4 text-center"
+                    >Edificio Municipal S/N, Plaza 6 de Agosto, Zona Incalaya, Colquiri</span
+                >
+                <div class="hidden md:block">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30460.14157428399!2d-67.14646378939335!3d-17.38692598885574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e262417bb7396f%3A0xc49bca27de22ba6!2sColquiri!5e0!3m2!1ses-419!2sbo!4v1724208201439!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="md:hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15230.067290351766!2d-67.1258641!3d-17.386968000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e262417bb7396f%3A0xc49bca27de22ba6!2sColquiri!5e0!3m2!1ses-419!2sbo!4v1724205645682!5m2!1ses-419!2sbo"
+                        width="200"
+                        height="350"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-center items-center text-xl md:text-3xl">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#f61313"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+            <span class="font-bold mt-5 text-2xl">Teléfonos/Celulares: </span>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-5">
+                <span class="text-lg md:text-3xl"><a href="tel:67345419" target="_blank">+591 67345419</a></span>
+            <span class="text-lg md:text-3xl"><a href="tel:67197759" target="_blank">+591 67197759</a></span>
+            <span class="text-lg md:text-3xl"><a href="tel:71569500" target="_blank">+591 71569500</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="grid place-items-center mb-10 mt-2 " >
+        <h2 class="text-4xl">Contactanos</h2>
+        <form class="w-[80%] grid place-items-center border-2 border-red-800 h-auto rounded-2xl md:p-6 gap-4 py-3" action="https://formsubmit.co/" method="POST">
+            <div class="flex flex-col">
+                <label for="name"><strong>NOMBRE</strong></label>
+                <input class="p-6 text center md:min-w-[800px] border-2 border-black rounded-lg max-h-[40px]" type="text" name="name" id="name" placeholder="introduzca su nombre..." required>
+            </div>
+            <div class="flex flex-col">
+                <label for="phone"><strong>TELÉFONO</strong></label>
+                <input class="p-6 text center md:min-w-[800px] border-2 border-black rounded-lg max-h-[40px]" type="tel" name="phone" id="phone" placeholder="introduzca teléfono..." required>
+            </div>
+            <div class="flex flex-col">
+                <label for="email"><strong>CORREO ELECTRONICO</strong></label>
+                <input class="p-6 text center md:min-w-[800px] border-2 border-black rounded-lg max-h-[40px]" type="email" name="correo" id="correo" placeholder="introduzca su correo..." required>
+            </div>
+            <div class="flex flex-col">
+                <label for="mensaje"><strong>MENSAJE</strong></label>
+                <textarea placeholder="Mensaje... " class="p-6 md:min-w-[800px] border-2 border-black rounded-xl min-h-[100px]" name="mensaje" id="mensaje"></textarea>
+            </div>
+            <button class="w-[80%] rounded-2xl shadow-xl shadow-red-300 bg-red-600 text-white font-bold text-2xl md:text-4xl" type="submit">
+                    ENVIAR
+            </button>
+            <input type="hidden" name="_next" value="https://municipio-colquiri.vercel.app/">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+    </div>
 </Layout>
