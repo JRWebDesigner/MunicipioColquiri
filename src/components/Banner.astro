@@ -1,0 +1,15 @@
+---
+const {titulo, imagen} = Astro.props
+---
+
+<div class="relative w-full h-[55vh] bg-gradient-to-l to-black from-red-800 flex items-center justify-center">
+    <h1 class="z-10 ml-10 text-white text-4xl md:text-7xl">
+        {titulo}
+    </h1>
+    <img class="w-full h-full absolute opacity-25 object-cover" src=`${imagen}` alt=`${titulo} | Rey de Reyes`>
+</div>
+<style>
+    h1{
+        text-shadow: 2px 2px 8px black;
+    }
+</style>
