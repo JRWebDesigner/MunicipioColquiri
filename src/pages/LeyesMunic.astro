@@ -7,4 +7,34 @@ import Banner from "../components/Banner.astro";
         titulo="Leyes Municipales"
         imagen="/FotosGamp/Alcalde.jpg"
     />
+    <div class="my-10 hidden md:block">
+        <div class="grid grid-cols-4 border-b-2 border-t-2 border-black">
+            <div class="flex justify-center items-center border-r-2 border-black">
+                <span class="mx-auto">Nº</span>
+            </div>
+            <div class="flex justify-center items-center border-r-2 border-black">
+                <span>Fecha</span>
+            </div>
+            <div class="flex justify-center items-center border-r-2 border-black">
+                <span>Descripcion</span>
+            </div>
+            <div class="flex justify-center items-center">
+                <span>Descargar</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 border-b-2 border-gray-500">
+            <div class="flex justify-center items-center border-r-2 border-gray-300">
+                12
+            </div>
+            <div  class="flex justify-center items-center border-r-2 border-gray-300">
+                17/10/24
+            </div>
+            <div class="flex justify-center items-center border-r-2 border-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptas iusto possimus quia, adipisci magni, quis repudiandae cumque rem, repellendus soluta officia sed aspernatur. Doloremque distinctio laborum quos ratione officiis? Quis quod esse labore.
+            </div>
+            <div class="flex justify-center items-center">
+                <img class="w-[10%]" src="pdf.png" alt="">
+            </div>
+        </div>
+    </div>
 </Layout>
