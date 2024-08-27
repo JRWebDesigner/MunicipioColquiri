@@ -7,9 +7,32 @@ import Banner from "../components/Banner.astro";
     titulo="Convocatorias"
     imagen="/FotosGamp/imagen2.jpg"
     />
-    <div class="my-10 h-[70vh] flex justify-center items-center">
-        <span>
-            Todavia no se publicaron Convocatorias
-        </span>
+    <div class="pp my-10 min-h-[70vh] flex flex-wrap-reverse gap-8 justify-around items-center">
     </div>
 </Layout>
+<script>
+    const pp=document.querySelector('.pp')
+    fetch('https://adminicstracioncolquiri.onrender.com/convocatoria')
+    .then(response => response.json())
+    .then(data => {const html = data.map((data)=>{
+        return(
+            `
+                    <div class="bg-white shadow-lg w-[40vw] p-5 flex justify-center items-center">
+                        <a class="w-full h-full flex-col gap-4 flex justify-center items-center" href="${data.url}" target="_blanck">
+                            <div>
+                                <h2 class="text-3xl">${data.titulo}</h2>
+                                <small>${data.fecha}</small>
+                            </div>
+                            <p class="text-lg">${data.descripcion}</p>
+                        </a>   
+                    </div> 
+            `
+        )
+    }
+    ).join('') 
+    pp.innerHTML=html    
+}
+)
+    ;
+			
+</script>

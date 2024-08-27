@@ -9,44 +9,94 @@ import Banner from "../components/Banner.astro";
         />
         <div class="my-10 hidden md:block">
             <div class="grid grid-cols-4 border-b-2 border-t-2 border-black">
-                <div class="flex justify-center items-center border-r-2 border-black">
+                <div
+                    class="flex justify-center items-center border-r-2 border-black"
+                >
                     <span class="mx-auto">Nº</span>
                 </div>
-                <div class="flex justify-center items-center border-r-2 border-black">
+                <div
+                    class="flex justify-center items-center border-r-2 border-black"
+                >
                     <span>Fecha</span>
                 </div>
-                <div class="flex justify-center items-center border-r-2 border-black">
+                <div
+                    class="flex justify-center items-center border-r-2 border-black"
+                >
                     <span>Descripcion</span>
                 </div>
                 <div class="flex justify-center items-center">
                     <span>Descargar</span>
                 </div>
             </div>
-            <div class="grid grid-cols-4 border-b-2 border-gray-500">
-                <div class="flex justify-center items-center border-r-2 border-gray-300">
-                    12
-                </div>
-                <div  class="flex justify-center items-center border-r-2 border-gray-300">
-                    17/10/24
-                </div>
-                <div class="flex justify-center items-center border-r-2 border-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptas iusto possimus quia, adipisci magni, quis repudiandae cumque rem, repellendus soluta officia sed aspernatur. Doloremque distinctio laborum quos ratione officiis? Quis quod esse labore.
-                </div>
-                <div class="flex justify-center items-center">
-                    <img class="w-[10%]" src="pdf.png" alt="">
-                </div>
+            <div class="comp grid grid-cols-4 border-b-2 border-t-2 border-black">
             </div>
         </div>
         <div class="my-7 md:hidden">
-            <div class="border-2 border-gray-300 rounded-xl p-2 mx-auto flex w-[80%] justify-center items-center">
-                <div class="flex flex-col">
-                    <span>Nª 12</span>
-                <small>17/10/24</small>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis inventore quae cupiditate itaque reprehenderit ipsam recusandae voluptatibus adipisci dolor nam.
-                </p>
-                </div>
-                <img class="w-auto h-[20vw]" src="pdf.png" alt="">
+            <div
+                class="mobile border-2 border-gray-300 rounded-xl p-2 mx-auto flex w-[80%] justify-center items-center"
+            >
             </div>
         </div>
-</Layout>
+    </Layout>
+    <script>
+        const comp = document.querySelector(".comp");
+        const mobile = document.querySelector(".mobile");
+        fetch("https://adminicstracioncolquiri.onrender.com/rm")
+            .then((res) => res.json())
+            .then((rm) => {
+                const rmDates = rm
+                    .map((rm) => {
+                        return `
+                    <div
+                        class="flex justify-center items-center border-r-2 border-gray-300"
+                    >
+                            ${rm.nro}
+                    </div>
+                    <div
+                        class="flex justify-center items-center border-r-2 border-gray-300"
+                    >
+                        ${rm.fecha}
+                    </div>
+                    <div
+                        class="flex justify-center items-center border-r-2 border-gray-300"
+                    >
+                        ${rm.descripcion}
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <a 
+                           class="flex justify-center items-center w-full h-full"
+                           href="${rm.url}" target="_blanck"
+                        > 
+                            <img class="w-[25%]" src="pdf.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                        `;
+                    })
+                    .join("");
+                comp.innerHTML = rmDates;
+            });
+        fetch("https://adminicstracioncolquiri.onrender.com/rm")
+            .then((res) => res.json())
+            .then((data) => {
+                const rmDatesMobile = data.map((rm) => {
+                    return `
+                         <div class="flex flex-col">
+                    <span>Nº${rm.nro}</span>
+                    <small>${rm.fecha}</small>
+                    <p>
+                        ${rm.descripcion}
+                    </p>
+                </div>
+                <a
+                    href="${rm.url}"
+                    target="_blank"
+                >
+                    <img class="w-auto h-[20vw]" src="pdf.png" alt="" />
+                </a>
+                    `;
+                });
+                mobile.innerHTML = rmDatesMobile;
+            });
+    </script>
+    
