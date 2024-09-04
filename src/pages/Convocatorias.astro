@@ -12,7 +12,7 @@ import Banner from "../components/Banner.astro";
 </Layout>
 <script>
     const pp=document.querySelector('.pp')
-    fetch('https://adminicstracioncolquiri.onrender.com/convocatoria')
+    fetch('https://adminicstracion-colquiri-nzag.vercel.app/convocatoria')
     .then(response => response.json())
     .then(data => {const html = data.map((data)=>{
         return(
