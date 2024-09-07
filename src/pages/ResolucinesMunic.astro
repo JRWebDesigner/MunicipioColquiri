@@ -41,7 +41,7 @@ import Banner from "../components/Banner.astro";
     <script>
         const comp = document.querySelector(".comp");
         const mobile = document.querySelector(".mobile");
-        fetch("https://adminicstracion-colquiri-nzag.vercel.app/rm")
+        fetch("https://adminicstracioncolquiri.onrender.com/rm")
             .then((res) => res.json())
             .then((rm) => {
                 const rmDates = rm
@@ -76,7 +76,7 @@ import Banner from "../components/Banner.astro";
                     .join("");
                 comp.innerHTML = rmDates;
             });
-        fetch("https://adminicstracion-colquiri-nzag.vercel.app/rm")
+        fetch("https://adminicstracioncolquiri.onrender.com/rm")
             .then((res) => res.json())
             .then((data) => {
                 const rmDatesMobile = data.map((rm) => {
