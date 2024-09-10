@@ -17,7 +17,7 @@ import Banner from "../components/Banner.astro";
     .then(data => {const html = data.map((data)=>{
         return(
             `
-                    <div class="bg-white shadow-lg w-[40vw] p-5 flex flex-wrap-reverse justify-center items-center">
+                    <div class="bg-white shadow-lg w-[90&] md:w-[40vw] p-5 flex flex-wrap-reverse justify-center items-center">
                         <a class="w-full h-full flex-col gap-4 flex justify-center items-center" href="${data.url}" target="_blanck">
                             <div>
                                 <h2 class="text-3xl">${data.titulo}</h2>
