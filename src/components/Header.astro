@@ -2,11 +2,12 @@
 import Logo from "./Logo.astro"
 ---
 <header class="sticky top-0 lg:min-h-20 bg-white flex justify-center lg:justify-around items-center shadow-lg z-[100]">
+    <a class="md:hidden absolute left-3" href="/Login"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg></a>
     <div class="w-[30%] lg:w-[15%] z-50 py-2 ">
         <Logo />
     </div>
     <nav class="hidden lg:block">
-        <ul class="flex gap-4 font-semibold text-lg">
+        <ul class="flex gap-7 font-semibold text-lg">
             <li class="enlace"><a href="/">INICIO</a></li>
             <li class="relative Acordeon">
                 MUNICIPALIDAD
@@ -34,6 +35,7 @@ import Logo from "./Logo.astro"
                 </div>
             </li>
             <li class="enlace"><a href="/Contactos">CONTACTOS</a></li>
+            <a href="/Login"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg></a>
         </ul>
     </nav>
     <button id="menu" class="lg:hidden absolute right-3">
