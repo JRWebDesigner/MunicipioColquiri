@@ -6,12 +6,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  build: {
-    // Configura el caché aquí
-    cache: {
-      'Cache-Control': 'no-store',
-    },
-  },
   integrations: [tailwind(), sanity({
     projectId: 'hm9h78ua',
     dataset: 'production',

@@ -3,6 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import { getPosts } from '../sanity/lib/getPost';
 const posts = await getPosts();
+
+
+export const getStaticProps = {
+  revalidate: 10,
+};
 ---
 <Layout title="Novedades y Noticias">
   <Banner imagen="/FotosGamp/imagen6.jpg" titulo="Novedades y Noticias" />
