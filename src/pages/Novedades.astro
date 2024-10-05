@@ -1,13 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
+import { getPosts } from '../sanity/lib/getPost';
+const posts = await getPosts();
 ---
 <Layout title="Novedades y Noticias">
-    <Banner
-    imagen="/FotosGamp/imagen6.jpg"    
-    titulo="Novedades y Noticias"
-    />
-    <div class="contenedor_noticias flex justify-center items-center min-h-[30vh]">
-        <p>Por ahora no tenemos noticias</p>
-    </div>
+  <Banner imagen="/FotosGamp/imagen6.jpg" titulo="Novedades y Noticias" />
+  <ul class="md:w-[50%] m-auto grid place-items-center gap-5">
+    {posts.map(post => (
+      <li class="bg-white w-full p-4 md:rounded-3xl shadow-xl" >
+        <a href={`/post/${post.slug.current}`}>
+          <img class="rounded-[30px] m-auto h-full" src={post.mainImage?.asset?.url} alt={post.title} style="width:200px;" />
+          <small>{new Date(post.publishedAt).toLocaleDateString()}</small>
+          <h2 class="font-bold text-[20px]">{post.title}</h2>
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
