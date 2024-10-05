@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 
 export const postType = defineType({
-  name: "post",
+  name: "publicaciones",
   type: "document",
   fields: [
     defineField({
@@ -9,7 +9,7 @@ export const postType = defineType({
       type: "string",
     }),
     defineField({
-      name: "slug",
+      name: "ruta",
       type: "slug",
       options: {
         source: "title",
