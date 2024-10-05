@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import type { SanityDocument } from "@sanity/client";
 import { loadQuery } from "../../sanity/lib/load-query";
+import {urlForImage} from "../../sanity/lib/urlForImage"
 import PortableText from "../../components/PortableText.astro";
 
 export async function getStaticPaths() {
@@ -25,7 +26,7 @@ const { data: post } = await loadQuery<{
   body: any[];
   mainImage: {
     asset: {
-      url: string;
+      _ref: string; // Cambia esto según lo que estés recibiendo de Sanity
     };
   };
 }>({
@@ -35,49 +36,79 @@ const { data: post } = await loadQuery<{
 ---
 
 <Layout title=`${post.title}`>
-  <div class="w-[90%] m-auto grid place-items-center">
-    <h1 class="tituloPrinc">A post about {post.title}</h1>
+  <div class="post w-[75%] m-auto grid place-items-center">
+    <div>
+      <h1 class="tituloPrinc">A post about {post.title}</h1>
+        <img
+        class="m-auto"
+          src={urlForImage(post.mainImage).url()}
+          alt={post.title}
+        />
+    </div>
     <div class="w-full">
       <PortableText portableText={post.body} />
     </div>
   </div>
 </Layout>
-<style is:global>
-  .tituloPrinc {
-    font-size: 35px !important;
-    font-weight: 700 !important;
-  }
-  li{
-    list-style: disc;
-  }
-  h1 {
-    font-size: 20px;
-    font-weight: 500;
-  }
-  h2 {
-    font-size: 15px;
-    font-weight: 400;
-  }
-  h3 {
-    font-size: 10px;
-    font-weight: 300;
-  }
-  @media (min-width: 768px) {
+<style>
+  .post{
+    li{
+      list-style: disc;
+      margin-left: 20px;
+    }
     .tituloPrinc {
-      font-size: 25px !important;
+      font-size: 32px !important;
       font-weight: 700 !important;
     }
+    p{
+      font-size:16px;
+      line-height: 1.6; 
+    }
     h1 {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 500;
     }
     h2 {
-      font-size: 30px;
+      font-size: 24px ;
       font-weight: 400;
     }
     h3 {
-      font-size: 30px;
-      font-weight: 300;
+      font-size: 18px ;
+      font-weight: 400;
+    }
+    h4,h5,h6{
+      font-size: 14px ;
+    }
+    @media (min-width: 768px) {
+      .tituloPrinc {
+        font-size: 48px !important;
+        font-weight: 700 !important;
+      }
+      p{
+        font-size:18px;
+      }
+      h1 {
+        font-size: 48px;
+        font-weight: 500;
+      }
+      h2 {
+        font-size: 36px;
+        font-weight: 500;
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 400;
+      }
+      h4,h5,h5{
+        font-size:20px;
+      }
+      blockquote{
+        margin: 5px;
+    padding-left: 8px;
+    border-left: 2px red solid;
+        font-size:20px;
+    font-style: italic;
+      }
     }
   }
 </style>
