@@ -36,14 +36,6 @@ export const postType = defineType({
       ],
     }),
     defineField({
-      name: 'video',
-      title: 'Video',
-      type: 'file', // O "image" si prefieres subir imágenes o videos como "image"
-      options: {
-        accept: 'video/*' // Solo permitirá subir archivos de tipo video
-      }
-    }),
-    defineField({
       name: "categories",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
