@@ -20,9 +20,8 @@ const posts = await getPosts();
         </li>
         )}
         {post.video?.asset?.url && (
-          <li class="bg-white w-full p-4 md:rounded-3xl shadow-xl flex flex-wrap" >
-         
-         <video id="videosPost" controls class="m-auto w-auto md:max-h-[600px]">
+          <li class=" md:w-[80%]bg-white w-full p-4 md:rounded-3xl shadow-xl flex flex-wrap justify-center items-center" >
+         <video class="videosPost md:w-[60%]" controls class="m-auto w-auto md:max-h-[600px]">
           <source src={post.video.asset.url} type="video/mp4" />
             Tu navegador no soporta la reproducción de videos.
           </video>
@@ -37,8 +36,7 @@ const posts = await getPosts();
   </ul> 
 </Layout>
 <script>
-  const videosPost = document.getElementById('videosPost')
-  videosPost.setAttribute
+  const videosPost = document.querySelectorAll('.videosPost')
   let options=
   {
 		root: null,
@@ -53,5 +51,7 @@ const posts = await getPosts();
 		});
 	}
   let observer=new IntersectionObserver(Reproduc,options)
-	observer.observe(videosPost)
+  videosPost.forEach(video => {
+    observer.observe(video)
+  });
 </script>
