@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import { getPosts } from '../sanity/lib/getPost';
+
 const posts = await getPosts();
 
 
@@ -12,7 +13,7 @@ export async function getStaticProps() {
     props: {
       posts,
     },
-    revalidate: 20, 
+    revalidate: 60, 
   };
 }
 ---

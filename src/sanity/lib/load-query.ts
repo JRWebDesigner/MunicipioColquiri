@@ -13,7 +13,6 @@ export async function loadQuery<QueryResponse>({
     params ?? {},
     { filterResponse: false }
   );
-
   return {
     data: result,
   };
