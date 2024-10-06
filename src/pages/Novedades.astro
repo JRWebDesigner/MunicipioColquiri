@@ -4,19 +4,54 @@ import Banner from "../components/Banner.astro";
 import { getPosts } from '../sanity/lib/getPost';
 
 const posts = await getPosts();
-
 ---
 <Layout title="Novedades y Noticias">
   <Banner imagen="/FotosGamp/imagen6.jpg" titulo="Novedades y Noticias" />
-  <ul class="md:w-[60%] m-auto grid place-items-center gap-5">
+  <ul class=" m-auto grid place-items-center gap-5 py-4">
     {posts.map(post => (
-      <li class="bg-white w-full p-4 md:rounded-3xl shadow-xl" >
-        <a href={`/post/${post.slug.current}`}>
-          <img class="w-full" src={post.mainImage?.asset?.url} alt={post.title} />
+      <> 
+      {!(post.video?.asset?.url) && (
+          <li class="md:w-[60%] bg-white w-full p-4 md:rounded-3xl shadow-xl" >
+          <a href={`/post/${post.slug.current}`}>
+          <img class="m-auto w-auto md:max-h-[600px]" src={post.mainImage?.asset?.url} alt={post.title} />
           <small>{new Date(post.publishedAt).toLocaleDateString()}</small>
           <h2 class="font-bold text-[20px]">{post.title}</h2>
         </a>
-      </li>
+        </li>
+        )}
+        {post.video?.asset?.url && (
+          <li class="bg-white w-full p-4 md:rounded-3xl shadow-xl flex flex-wrap" >
+         
+         <video id="videosPost" controls class="m-auto w-auto md:max-h-[600px]">
+          <source src={post.video.asset.url} type="video/mp4" />
+            Tu navegador no soporta la reproducción de videos.
+          </video>
+          <div>
+          <small>{new Date(post.publishedAt).toLocaleDateString()}</small>
+          <h2 class="font-bold text-[20px]">{post.title}</h2>
+          </div>
+        </li>
+        )}
+      </>
     ))}
   </ul> 
 </Layout>
+<script>
+  const videosPost = document.getElementById('videosPost')
+  videosPost.setAttribute
+  let options=
+  {
+		root: null,
+		rootMargin: "0px",
+		threshold: 0.5,
+	};
+  function Reproduc(a, b) {
+		a.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.setAttribute('autoplay','')
+			}
+		});
+	}
+  let observer=new IntersectionObserver(Reproduc,options)
+	observer.observe(videosPost)
+</script>

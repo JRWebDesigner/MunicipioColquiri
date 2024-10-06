@@ -6,6 +6,7 @@ export async function getPosts() {
       title, 
       slug, 
       mainImage{asset->{url}},
+      video{asset->{url}},
       publishedAt
     }`;
   

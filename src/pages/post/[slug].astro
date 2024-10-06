@@ -15,7 +15,6 @@ export async function getStaticPaths() {
       params: {
         slug: slug.current,
       },
-      fallback: 'blocking',
     };
   });
 }
@@ -27,7 +26,7 @@ const { data: post } = await loadQuery<{
   body: any[];
   mainImage: {
     asset: {
-      _ref: string;
+      _ref: string; // Cambia esto según lo que estés recibiendo de Sanity
     };
   };
 }>({
@@ -39,7 +38,7 @@ const { data: post } = await loadQuery<{
 <Layout title=`${post.title}`>
   <div class="post w-[75%] m-auto grid place-items-center">
     <div>
-      <h1 class="tituloPrinc">A post about {post.title}</h1>
+      <h1 class="tituloPrinc">{post.title}</h1>
         <img
         class="m-auto"
           src={urlForImage(post.mainImage).url()}
