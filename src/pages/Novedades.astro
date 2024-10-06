@@ -10,7 +10,7 @@ const posts = await getPosts();
   <ul class=" m-auto grid place-items-center gap-5 py-4">
     {posts.map(post => (
       <> 
-      { post.video?.asset?.url===null && (
+      { post.video?.asset?.url==null && (
           <li class="md:w-[60%] bg-white w-full p-4 md:rounded-3xl shadow-xl" >
           <a href={`/post/${post.slug.current}`}>
           <img class="m-auto w-auto md:max-h-[600px]" src={post.mainImage?.asset?.url} alt={post.title} />
