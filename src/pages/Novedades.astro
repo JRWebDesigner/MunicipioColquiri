@@ -9,7 +9,6 @@ const posts = await getPosts();
   <Banner imagen="/FotosGamp/imagen6.jpg" titulo="Novedades y Noticias" />
   <ul class=" m-auto grid place-items-center gap-5 py-4">
     {posts.map(post => (
-      <> 
           <li class="md:w-[60%] bg-white w-full p-4 md:rounded-3xl shadow-xl" >
           <a href={`/post/${post.slug.current}`}>
           <img class="m-auto w-auto md:max-h-[600px]" src={post.mainImage?.asset?.url} alt={post.title} />
@@ -17,7 +16,6 @@ const posts = await getPosts();
           <h2 class="font-bold text-[20px]">{post.title}</h2>
         </a>
         </li>
-      </>
     ))}
   </ul> 
 </Layout>
