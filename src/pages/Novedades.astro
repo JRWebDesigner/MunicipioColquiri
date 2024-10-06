@@ -19,22 +19,3 @@ const posts = await getPosts();
     ))}
   </ul> 
 </Layout>
-<script>
-  const videosPost = document.getElementById('videosPost')
-  videosPost.setAttribute
-  let options=
-  {
-		root: null,
-		rootMargin: "0px",
-		threshold: 0.5,
-	};
-  function Reproduc(a, b) {
-		a.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.setAttribute('autoplay','')
-			}
-		});
-	}
-  let observer=new IntersectionObserver(Reproduc,options)
-	observer.observe(videosPost)
-</script>
