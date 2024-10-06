@@ -15,6 +15,7 @@ export async function getStaticPaths() {
       params: {
         slug: slug.current,
       },
+      revalidate: 60,
     };
   });
 }
