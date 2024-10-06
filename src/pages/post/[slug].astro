@@ -15,7 +15,7 @@ export async function getStaticPaths() {
       params: {
         slug: slug.current,
       },
-      revalidate: 60,
+      fallback: 'blocking',
     };
   });
 }
@@ -27,7 +27,7 @@ const { data: post } = await loadQuery<{
   body: any[];
   mainImage: {
     asset: {
-      _ref: string; // Cambia esto según lo que estés recibiendo de Sanity
+      _ref: string;
     };
   };
 }>({

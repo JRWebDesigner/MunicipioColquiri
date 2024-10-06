@@ -5,17 +5,6 @@ import { getPosts } from '../sanity/lib/getPost';
 
 const posts = await getPosts();
 
-
-export async function getStaticProps() {
-  const posts = await getPosts();
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60, 
-  };
-}
 ---
 <Layout title="Novedades y Noticias">
   <Banner imagen="/FotosGamp/imagen6.jpg" titulo="Novedades y Noticias" />
